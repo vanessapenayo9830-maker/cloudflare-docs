@@ -17,3 +17,10 @@ For more details, refer to [Set up a full domain](/dns/zone-setups/full-setup/se
 ## Availability
 
 <FeatureTable id="dns.full_setup" />
+curl "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/hostnames/settings/min_tls_version/$HOSTNAME" \
+  --request PUT \
+  --header "X-Auth-Email: $CLOUDFLARE_EMAIL" \
+  --header "X-Auth-Key: $CLOUDFLARE_API_KEY" \
+  --json '{
+    "value": "1.2"
+  }'
